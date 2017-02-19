@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->command->info("Stocks table seeded :)");
         $this->call(InvestmentsTableSeeder::class);
         $this->command->info("Investments table seeded :)");
+        $this->call(MutualfundsTableSeeder::class);
+        $this->command->info("Mutual Funds table seeded :)");
     }
 }
 
@@ -90,6 +92,26 @@ class InvestmentsTableSeeder extends Seeder {
                 'recent_value'=>'192000','recent_date'=>'2016-03-15','customer_id'=>'3'),
             array('category'=>'401K','description'=>'401K with OPPD','acquired_value'=>'0','acquired_date'=>'1993-07-09',
                 'recent_value'=>'134000','recent_date'=>'2016-05-05','customer_id'=>'3'),
+        ));
+    }
+}
+
+class MutualfundsTableSeeder extends Seeder {
+
+    public function run()
+    {
+        //delete users table records
+        DB::table('mutualfunds')->delete();
+        //insert some dummy records
+        DB::table('mutualfunds')->insert(array(
+            array('name'=>'Vanguard International Growth','units_purchased'=>'125','purchase_price'=>'5000','purchase_date'=>'2004-08-23',
+                'recent_value'=>'25000','recent_date'=>'2016-10-15','customer_id'=>'1'),
+            array('name'=>'Scout International','units_purchased'=>'25','purchase_price'=>'2500','purchase_date'=>'2004-10-13',
+                'recent_value'=>'9745','recent_date'=>'2016-12-05','customer_id'=>'1'),
+            array('name'=>'Vanguard Capital Opportunity','units_purchased'=>'2000','purchase_price'=>'75000','purchase_date'=>'2010-02-15',
+                'recent_value'=>'3500','recent_date'=>'2017-01-02','customer_id'=>'2'),
+            array('name'=>'FMI Focus','units_purchased'=>'75','purchase_price'=>'1200','purchase_date'=>'2016-11-03',
+                'recent_value'=>'1875','recent_date'=>'2017-01-25','customer_id'=>'3'),
         ));
     }
 }
