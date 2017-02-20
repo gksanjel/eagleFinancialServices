@@ -5,16 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mutualfund;
 use App\Customer;
-use Auth;
 
 class MutualfundController extends Controller
 {
     public function index()
     {
-
-        $mutualfunds = Mutualfund::all();
-        return view('mutualfunds.index',compact('mutualfunds'));
-
+        if (Auth::check()) {
+            $mutualfunds = Mutualfund::all();
+            return view('mutualfunds.index',compact('mutualfunds'));
+        } else return redirect('/');
 
     }
 
