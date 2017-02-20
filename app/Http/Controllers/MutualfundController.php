@@ -11,10 +11,10 @@ class MutualfundController extends Controller
 {
     public function index()
     {
-        if (Auth::check()) {
-            $mutualfunds = Mutualfund::all();
-            return view('mutualfunds.index',compact('mutualfunds'));
-        } else return redirect('/');
+
+        $mutualfunds = Mutualfund::all();
+        return view('mutualfunds.index',compact('mutualfunds'));
+
 
     }
 

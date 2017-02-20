@@ -11,11 +11,9 @@ class StockController extends Controller
 {
     public function index()
     {
-        if (Auth::check()) {
-            $stocks=Stock::all();
-            return view('stocks.index',compact('stocks'));
-        } else return redirect('/');
 
+        $stocks=Stock::all();
+        return view('stocks.index',compact('stocks'));
     }
 
     public function show($id)

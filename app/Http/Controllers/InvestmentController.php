@@ -11,10 +11,8 @@ class InvestmentController extends Controller
 {
     public function index()
     {
-        if (Auth::check()) {
-            $investments = Investment::all();
-            return view('investments.index',compact('investments'));
-        } else return redirect('/');
+        $investments = Investment::all();
+        return view('investments.index',compact('investments'));
     }
 
     public function show($id)

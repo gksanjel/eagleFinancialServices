@@ -10,10 +10,8 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        if (Auth::check()) {
-            $customers=Customer::all();
-            return view('customers.index',compact('customers'));
-        } else return redirect('/');
+        $customers=Customer::all();
+        return view('customers.index',compact('customers'));
 
     }
 
