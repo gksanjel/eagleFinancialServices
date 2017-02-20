@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Stock;
 use App\Customer;
+use Auth;
 
 class StockController extends Controller
 {

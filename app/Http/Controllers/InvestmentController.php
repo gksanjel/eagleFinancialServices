@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Investment;
 use App\Customer;
 use Illuminate\Http\Request;
+use Auth;
 
 class InvestmentController extends Controller
 {

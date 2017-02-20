@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mutualfund;
 use App\Customer;
+use Auth;
 
 class MutualfundController extends Controller
 {
