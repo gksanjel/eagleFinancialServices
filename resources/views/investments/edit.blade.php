@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts.app')
 @section('content')
     <h1>Update Investment</h1>
     {!! Form::model($investment,['method' => 'PATCH','route'=>['investments.update',$investment->id]]) !!}

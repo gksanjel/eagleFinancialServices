@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 use App\Investment;
 use App\Customer;
 use Illuminate\Http\Request;
+use Auth;
 
 class InvestmentController extends Controller
 {
     public function index()
     {
-        //
-        $investments = Investment::all();
-        return view('investments.index',compact('investments'));
+        if (Auth::check()) {
+            $investments = Investment::all();
+            return view('investments.index',compact('investments'));
+        } else return redirect('/');
     }
 
     public function show($id)

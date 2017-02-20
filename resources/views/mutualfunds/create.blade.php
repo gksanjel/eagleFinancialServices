@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts.app')
 @section('content')
     <h1>Create New Mutual Fund</h1>
     {!! Form::open(['url' => 'mutualfunds']) !!}

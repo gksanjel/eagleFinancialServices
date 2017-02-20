@@ -19,3 +19,6 @@ Route::resource('customers','CustomerController');
 Route::resource('stocks','StockController');
 Route::resource('investments','InvestmentController');
 Route::resource('mutualfunds','MutualfundController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

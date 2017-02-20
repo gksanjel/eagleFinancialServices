@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Customer;
+use Auth;
 
 class CustomerController extends Controller
 {
     public function index()
     {
-        //
-        $customers=Customer::all();
-        return view('customers.index',compact('customers'));
+        if (Auth::check()) {
+            $customers=Customer::all();
+            return view('customers.index',compact('customers'));
+        } else return redirect('/');
+
     }
 
     public function show($id)

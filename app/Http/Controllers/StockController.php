@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Stock;
 use App\Customer;
+use Auth;
 
 class StockController extends Controller
 {
     public function index()
     {
-        //
-        $stocks=Stock::all();
-        return view('stocks.index',compact('stocks'));
+        if (Auth::check()) {
+            $stocks=Stock::all();
+            return view('stocks.index',compact('stocks'));
+        } else return redirect('/');
+
     }
 
     public function show($id)
