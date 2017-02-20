@@ -13,7 +13,7 @@ class CustomerController extends Controller
         if (Auth::check()) {
             $customers=Customer::all();
             return view('customers.index',compact('customers'));
-        } else return view('welcome');
+        } else redirect('/');
 
     }
 
